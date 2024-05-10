@@ -6,6 +6,8 @@ local root_files = {
   'setup.cfg',
   'requirements.txt',
   'Pipfile',
+  'pyrightconfig.json',
+  '.git',
 }
 
 local function exepath(expr)
@@ -31,7 +33,9 @@ return {
     },
     filetypes = { 'python' },
     single_file_support = true,
-    root_dir = util.root_pattern(unpack(root_files)),
+    root_dir = function(fname)
+      return util.root_pattern(unpack(root_files))(fname)
+    end,
     settings = {
       python = {
         analysis = {
