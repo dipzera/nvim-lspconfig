@@ -15,14 +15,14 @@ end
 
 return {
   default_config = {
-    before_init = function(_, config)
-      if not config.settings.python then
-        config.settings.python = {}
-      end
-      if not config.settings.python.pythonPath then
-        config.settings.python.pythonPath = exepath 'python3' or exepath 'python' or 'python'
-      end
-    end,
+    -- before_init = function(_, config)
+    --   if not config.settings.python then
+    --     config.settings.python = {}
+    --   end
+    --   if not config.settings.python.pythonPath then
+    --     config.settings.python.pythonPath = exepath 'python3' or exepath 'python' or 'python'
+    --   end
+    -- end,
     cmd = {
 
       'node',
